@@ -159,9 +159,6 @@ If you\'re sure you are doing right, delete "_id" key in your input data.'
         self.db[collection].delete_many({})
 
     def reset(self):
-        self.clean_all_collection()
-
-    def clean_all_collection(self):
         if self.collection_list is not None:
             for collection in self.collection_list:
                 self.clean_collection(collection)

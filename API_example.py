@@ -51,9 +51,7 @@ def API_example():
         "name": "德基水庫",
     }
 
-    ip = "172.26.85.148"
-    port = 27017
-    db = MongoDB(ip=ip, port=port)
+    db = MongoDB()
     db.reset()
     db.insert_earthquake_data(earthEqake_test)
     db.insert_earthquake_data(earthEqake_test2)

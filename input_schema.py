@@ -1,12 +1,12 @@
 from typing import TypedDict
 from strongtyping.strong_typing import match_class_typing
 from datetime import datetime
-from typing import List, Dict
 
 @match_class_typing
 class NecessaryEarthquakeType(TypedDict):
     time: datetime
-    magnitude: List[Dict[str, str]]
+    factory: str
+    magnitude: float
 
 
 @match_class_typing

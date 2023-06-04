@@ -1,12 +1,12 @@
 import pymongo
 import bson
-from dbAPI.Database import Database
+from Database import Database
 from strongtyping.strong_typing import match_class_typing, match_typing
 from strongtyping.strong_typing_utils import TypeMisMatch
 from typing import Optional, List, Dict, Union, Any, Tuple
 from datetime import datetime
 import pprint
-from dbAPI.input_schema import NecessaryEarthquakeType, NecessaryElectricityType, NecessaryReservoirType
+from input_schema import NecessaryEarthquakeType, NecessaryElectricityType, NecessaryReservoirType
 import os
 from dotenv import load_dotenv
 
@@ -14,14 +14,14 @@ from dotenv import load_dotenv
 @match_class_typing
 class MongoDB(Database):
     
-    def __init__(self, ip: Optional[Union[str, None]] = None, port: Optional[Union[int, None]]=None, db_name: Optional[Union[str, None]] = None, collection_list:  Optional[Union[list, None]] = None):
+    def __init__(self, ip: Optional[str] = None, port: Optional[Union[int, None]]=None, db_name: Optional[Union[str, None]] = None, collection_list:  Optional[Union[list, None]] = None):
         if ip == None or port == None or db_name == None or collection_list == None:
             print("[MongoDB] At least one input is invalid or not specified. Loading env")
             load_dotenv()
             ip = os.getenv('IP')
             port = int(os.getenv('PORT'))
             db_name = os.getenv('DB_NAME')
-            collection_list = os.getenv('COLLECTION_LIST')
+            collection_list = os.getenv('COLLECTION_LIST').split(",")
 
         super().__init__(ip=ip, port=port, db_name=db_name)
         self.collection_list = collection_list
@@ -53,7 +53,6 @@ class MongoDB(Database):
         data_to_check=""
         try:
             data_to_check = data.copy()
-            print(data['magnitude'][0])
             data_to_check['magnitude'] = data['magnitude'][0]['magnitude']
             data_to_check['factory'] = data["magnitude"][0]['factory']
         except:
@@ -127,7 +126,6 @@ class MongoDB(Database):
     
     
     def print_all_data(self, collection: str):
-        print(f"Collection: {collection}")
         for post in self.db[collection].find():
             pprint.pprint(post)   
         print("\n")

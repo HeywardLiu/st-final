@@ -11,17 +11,15 @@ import os
 from dotenv import load_dotenv
 
 
-# change import dbAPI.* to *
-
 @match_class_typing
 class MongoDB(Database):
     
-    def __init__(self, ip: Optional[str] = None, port: Optional[int]=None, db_name: Optional[str] = None, collection_list:  Optional[list] = None):
+    def __init__(self, ip: Optional[Union[str, None]] = None, port: Optional[Union[int, None]]=None, db_name: Optional[Union[str, None]] = None, collection_list:  Optional[Union[list, None]] = None):
         if ip == None or port == None or db_name == None or collection_list == None:
             print("[MongoDB] At least one input is invalid or not specified. Loading env")
             load_dotenv()
             ip = os.getenv('IP')
-            port = os.getenv('PORT')
+            port = int(os.getenv('PORT'))
             db_name = os.getenv('DB_NAME')
             collection_list = os.getenv('COLLECTION_LIST')
 
@@ -76,26 +74,54 @@ class MongoDB(Database):
         
     
     def retrieve_earthquake_data_by_factory(self, factory: str=None, quantity:int =1):  # factory_location = ["竹", "中", "南"]
-        assert factory is not None, "[MongoDB] Fatory was not specified in given request"
-        assert type(quantity) == int, "[MongoDB] Quantity must be integer"
+        try:
+            assert factory is not None
+        except:
+            print("[MongoDB] Fatory was not specified in given request")
+            raise
+        try:
+            assert type(quantity) == int
+        except:
+            print("[MongoDB] Quantity must be integer")
+            raise
         return [x for x in self.retrieve_data(
                 collection_name="factory", condition={"factory": factory}, sort=('time', -1), limit=quantity)]
 
     def retrieve_earthquake_data(self, quantity:int =1):
-        assert type(quantity) == int, "[MongoDB] Quantity must be integer"
+        try:
+            assert type(quantity) == int
+        except:
+            print("[MongoDB] Quantity must be integer")
+            raise
         return [x for x in self.retrieve_data(
                 collection_name="earthquake", condition={}, sort=('time', -1), limit=quantity)]
     
     def retrieve_reservoir_data_by_name(self, name: str=None, quantity:int =1):
-        assert name is not None, "[MongoDB] Resovoir name was not specified in given request"
-        assert type(quantity) == int, "[MongoDB] Quantity must be integer"
+        try:
+            assert name is not None, "[MongoDB] Resovoir name was not specified in given request"
+        except:
+            print("[MongoDB] Resovoir name was not specified in given request")
+            raise
+
+        try:
+            assert type(quantity) == int
+        except:
+            print("[MongoDB] Quantity must be integer")
+            raise
+
         return [x for x in self.retrieve_data(
                 collection_name="reservoir", condition={"name": name}, sort=('time', -1), limit=quantity)]
     
     
     def retrieve_electricity_data_by_region(self, region: str=None, quantity:int =1):  # region = ["北", "中", "南"]
-        assert type(quantity) == int, "[MongoDB] Quantity must be integer"
-        assert region is not None, "[MongoDB] Region was not specified in given request"
+        try:
+            assert type(quantity) == int
+        except:
+            print("[MongoDB] Quantity must be integer")
+        try:
+            assert region is not None
+        except:
+            print("[MongoDB] Region was not specified in given request")
         return [x for x in self.retrieve_data(
                 collection_name="electricity", condition={"region": region}, sort=('time', 1), limit=quantity)]
     

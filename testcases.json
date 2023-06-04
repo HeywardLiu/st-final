@@ -62,17 +62,17 @@
           {"factory": "南", "magnitude": 0.0003714193582435097}
       ]},
     {
-      "time": "2023-5-12 03:40:51",
+      "time": "2023-5-27 03:40:51",
       "M_L": 3.6,
       "focal_dep": 3.2,
       "longitude": 41.0,
-      "latitude": 20.7,
+      "latitude": 18.7,
       "magnitude": [
-          {"factory": "竹", "magnitude": 0.00032644588703523386},
           {"factory": "中", "magnitude": 0.00019905740360289052},
           {"factory": "南", "magnitude": 0.0003714193582435097}
       ]}],
-
+  "retrieve_earthEqake_F":[],
+  
   "retrieve_electricity_T":[
     {
       "region": "北",
@@ -84,8 +84,9 @@
       "region": "南",
       "power_usage": 510.3,
       "power_generate": 472.1,
-      "time": "2023-5-12 03:40:52"
+      "time": "2023-5-27 03:40:52"
     }],
+  "retrieve_electricity_F":[],
   
   "retrieve_reservoir_T":[
     {
@@ -95,9 +96,10 @@
       "name": "德基水庫"
     },
     {
-      "time": "2023-5-12 03:40:52",
+      "time": "2023-5-19 03:40:52",
       "percentage": 42.6,
       "water_supply": 321.2,
-      "name": "德基水庫"
-    }]
+      "name": "翡翠水庫"
+    }],
+  "retrieve_reservoir_F":[]
 }

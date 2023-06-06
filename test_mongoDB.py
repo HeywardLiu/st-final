@@ -4,7 +4,6 @@ from Database import Database
 import pymongo
 import bson
 from strongtyping.strong_typing import match_class_typing, match_typing
-from strongtyping.strong_typing_utils import TypeMisMatch
 from typing import Optional, List, Dict, Union, Any, Tuple
 from datetime import datetime
 import pprint
@@ -13,12 +12,6 @@ import os
 from dotenv import load_dotenv
 from unittest.mock import MagicMock
 from strongtyping.strong_typing_utils import TypeMisMatch
-
-load_dotenv()
-IP = os.getenv('IP')
-PORT = os.getenv('PORT')
-DB_NAME = os.getenv('DB_NAME')
-COLLECTION_LIST = os.getenv('COLLECTION_LIST')
 
 class TestMongoDB(unittest.TestCase):
     

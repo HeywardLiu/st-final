@@ -1,0 +1,105 @@
+{
+  "insert_earthquake_TT":
+  {
+    "time": "2023-05-23 00:01:23", 
+    "focal_dep": 0.0, 
+    "longitude": 0.0, 
+    "latitude": 0.0, 
+    "magnitude": [{"factory": "\u5357", "magnitude": 0.003}]
+  },
+  "insert_earthquake_FF":
+    "time",
+  "insert_earthquake_TF":
+  {
+    "time": "2023-05-23 00:01:23", 
+    "focal_dep": 0.0, 
+    "longitude": 0.0, 
+    "latitude": 0.0
+  },
+
+  "insert_electricity_TT":
+  {
+    "region": "北",
+    "power_usage": 512.3,
+    "power_generate": 482.1,
+    "time": "2023-5-12 03:40:52"
+  },
+  "insert_electricity_FF":
+    "time",
+  "insert_electricity_TF":
+  {
+    "power_usage": 512.3,
+    "power_generate": 482.1,
+    "time": "2023-5-12 03:40:52"
+  },
+
+  "insert_reservoir_TT":
+  {
+    "time": "2023-5-12 03:40:52",
+    "percentage": 427.6,
+    "water_supply": 321.2,
+    "name": "德基水庫"
+  },
+  "insert_reservoir_FF":
+    "time",
+  "insert_reservoir_TF":
+  {
+    "time": "2023-5-12 03:40:52",
+    "percentage": 427.6,
+    "water_supply": 321.2
+  },
+
+  "retrieve_earthEqake_T":[
+    {
+      "time": "2023-5-12 03:40:52",
+      "M_L": 3.6,
+      "focal_dep": 3.2,
+      "longitude": 41.0,
+      "latitude": 20.7,
+      "magnitude": [
+          {"factory": "竹", "magnitude": 0.00032644588703523386},
+          {"factory": "中", "magnitude": 0.00019905740360289052},
+          {"factory": "南", "magnitude": 0.0003714193582435097}
+      ]},
+    {
+      "time": "2023-5-27 03:40:51",
+      "M_L": 3.6,
+      "focal_dep": 3.2,
+      "longitude": 41.0,
+      "latitude": 18.7,
+      "magnitude": [
+          {"factory": "中", "magnitude": 0.00019905740360289052},
+          {"factory": "南", "magnitude": 0.0003714193582435097}
+      ]}],
+  "retrieve_earthEqake_F":[],
+  
+  "retrieve_electricity_T":[
+    {
+      "region": "北",
+      "power_usage": 512.3,
+      "power_generate": 482.1,
+      "time": "2023-5-12 03:40:52"
+    },
+    {
+      "region": "南",
+      "power_usage": 510.3,
+      "power_generate": 472.1,
+      "time": "2023-5-27 03:40:52"
+    }],
+  "retrieve_electricity_F":[],
+  
+  "retrieve_reservoir_T":[
+    {
+      "time": "2023-5-12 03:40:52",
+      "percentage": 427.6,
+      "water_supply": 321.2,
+      "name": "德基水庫"
+    },
+    {
+      "time": "2023-5-19 03:40:52",
+      "percentage": 42.6,
+      "water_supply": 321.2,
+      "name": "翡翠水庫"
+    }],
+  "retrieve_reservoir_F":[]
+}

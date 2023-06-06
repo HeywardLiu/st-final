@@ -2,6 +2,7 @@ from typing import TypedDict
 from strongtyping.strong_typing import match_class_typing
 from datetime import datetime
 
+
 @match_class_typing
 class NecessaryEarthquakeType(TypedDict):
     time: datetime

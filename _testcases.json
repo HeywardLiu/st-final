@@ -1,5 +1,6 @@
 {
-    "test_retrieve_earthquake_data_by_factory":[
+    "test_retrieve_earthquake_data_by_factory":
+    [
         {
             "case":"TTTT",
             "factory":"竹",
@@ -32,6 +33,101 @@
             "factory":"南",
             "quantity":1,
             "mock_insert_data":{"time": "2023-5-12 03:40:52", "M_L": 3.6, "focal_dep": 3.2, "longitude": 41.0, "latitude": 20.7, "magnitude": [{"factory": "竹", "magnitude": 0.00032644588703523386}, {"factory": "中", "magnitude": 0.00019905740360289052}]},
+            "outcome":[]
+        }
+    ],
+    "test_retrieve_earthquake_data":
+    [
+        {
+            "case":"TT",
+            "quantity":1,
+            "mock_insert_data":{"time": "2023-5-12 03:40:52", "M_L": 3.6, "focal_dep": 3.2, "longitude": 41.0, "latitude": 20.7, "magnitude": [{"factory": "竹", "magnitude": 0.00032644588703523386}, {"factory": "中", "magnitude": 0.00019905740360289052}, {"factory": "南", "magnitude": 0.0003714193582435097}]},
+            "outcome":[{"time": "2023-5-12 03:40:52", "M_L": 3.6, "focal_dep": 3.2, "longitude": 41.0, "latitude": 20.7}]
+        },
+        {
+            "case":"FT",
+            "factory":60,
+            "quantity":"1",
+            "mock_insert_data":{"time": "2023-5-12 03:40:52", "M_L": 3.6, "focal_dep": 3.2, "longitude": 41.0, "latitude": 20.7, "magnitude": [{"factory": "竹", "magnitude": 0.00032644588703523386}, {"factory": "中", "magnitude": 0.00019905740360289052}, {"factory": "南", "magnitude": 0.0003714193582435097}]},
+            "outcome":"Exception:TypeMisMatch"
+        },
+        {
+            "case":"TF",
+            "quantity":1,
+            "outcome":[]
+        }
+    ],
+    "test_retrieve_reservoir_data_by_name":
+    [
+        {
+            "case":"TTTT",
+            "name":"德基水庫",
+            "quantity":1,
+            "mock_insert_data":{"time":"2023-5-12 03:40:52", "percentage": 427.6, "water_supply": 321.2, "name": "德基水庫"},
+            "outcome":[{"time":"2023-5-12 03:40:52", "percentage": 427.6, "water_supply": 321.2, "name": "德基水庫"}]
+        },
+        {
+            "case":"FTTT",
+            "name":60,
+            "quantity":1,
+            "mock_insert_data":{"time":"2023-5-12 03:40:52", "percentage": 427.6, "water_supply": 321.2, "name": "德基水庫"},
+            "outcome":"Exception:TypeMisMatch"
+        },
+        {
+            "case":"TFTT",
+            "name":"德基水庫",
+            "quantity":"1",
+            "mock_insert_data":{"time":"2023-5-12 03:40:52", "percentage": 427.6, "water_supply": 321.2, "name": "德基水庫"},
+            "outcome":"Exception:TypeMisMatch"
+        },
+        {
+            "case":"TTFT",
+            "name":"德基水庫",
+            "quantity":1,
+            "outcome":[]
+        },
+        {
+            "case":"TTTF",
+            "name":"石門水庫",
+            "quantity":1,
+            "mock_insert_data":{"time":"2023-5-12 03:40:52", "percentage": 427.6, "water_supply": 321.2, "name": "德基水庫"},
+            "outcome":[]
+        }
+    ],
+    "retrieve_electricity_data_by_region":
+    [
+        {
+            "case":"TTTT",
+            "region":"南",
+            "quantity":1,
+            "mock_insert_data":{"region":"南", "power_usage":510.3, "power_generate": 472.1, "time": "2023-5-12 03:40:52"},
+            "outcome":[{"region":"南", "power_usage":510.3, "power_generate": 472.1, "time": "2023-5-12 03:40:52"}]
+        },
+        {
+            "case":"FTTT",
+            "region":60,
+            "quantity":1,
+            "mock_insert_data":{"region":"南", "power_usage":510.3, "power_generate": 472.1, "time": "2023-5-12 03:40:52"},
+            "outcome":"Exception:TypeMisMatch"
+        },
+        {
+            "case":"TFTT",
+            "region":"北",
+            "quantity":"1",
+            "mock_insert_data":{"region":"南", "power_usage":510.3, "power_generate": 472.1, "time": "2023-5-12 03:40:52"},
+            "outcome":"Exception:TypeMisMatch"
+        },
+        {
+            "case":"TTFT",
+            "region":"北",
+            "quantity":1,
+            "outcome":[]
+        },
+        {
+            "case":"TTTF",
+            "region":"北",
+            "quantity":1,
+            "mock_insert_data":{"region":"南", "power_usage":510.3, "power_generate": 472.1, "time": "2023-5-12 03:40:52"},
             "outcome":[]
         }
     ]

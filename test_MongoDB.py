@@ -13,7 +13,7 @@ class TestMongoDB(unittest.TestCase):
     def setup(self):
         self.db = MongoDB()
         self.db.reset = MagicMock(side_effect=self.mock_reset())
-        with open("_testcases.json", "r") as f:
+        with open("ISP_testcases.json", "r") as f:
             self.testcases = json.load(f)
 
     def test_retrieve_earthquake_data_by_factory(self):

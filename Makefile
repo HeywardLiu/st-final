@@ -7,3 +7,4 @@ init:
 
 clean:
 	docker stop my-mongodb
+	docker stop db-test

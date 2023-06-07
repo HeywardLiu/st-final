@@ -1,5 +1,7 @@
 # Get Starting
 
+![example workflow](https://github.com/HeywardLiu/st-final/actions/workflows/database_unittest.yml/badge.svg)
+
 - Init a container
 
 ```shell

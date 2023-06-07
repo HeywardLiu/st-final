@@ -90,11 +90,6 @@ class MongoDB(Database):
     def retrieve_earthquake_data_by_factory(
         self, factory: str = None, quantity: int = 1
     ):  # factory_location = ["竹", "中", "南"]
-        try:
-            assert factory is not None
-        except:
-            print("[MongoDB] Fatory was not specified in given request")
-            raise
 
         return [
             x
@@ -107,11 +102,7 @@ class MongoDB(Database):
         ]
 
     def retrieve_earthquake_data(self, quantity: int = 1):
-        try:
-            assert type(quantity) == int
-        except:
-            print("[MongoDB] Quantity must be integer")
-            raise
+
         return [
             x
             for x in self.retrieve_data(
@@ -123,19 +114,6 @@ class MongoDB(Database):
         ]
 
     def retrieve_reservoir_data_by_name(self, name: str = None, quantity: int = 1):
-        try:
-            assert (
-                name is not None
-            ), "[MongoDB] Resovoir name was not specified in given request"
-        except:
-            print("[MongoDB] Resovoir name was not specified in given request")
-            raise
-
-        try:
-            assert type(quantity) == int
-        except:
-            print("[MongoDB] Quantity must be integer")
-            raise
 
         return [
             x
@@ -150,14 +128,6 @@ class MongoDB(Database):
     def retrieve_electricity_data_by_region(
         self, region: str = None, quantity: int = 1
     ):  # region = ["北", "中", "南"]
-        try:
-            assert type(quantity) == int
-        except:
-            print("[MongoDB] Quantity must be integer")
-        try:
-            assert region is not None
-        except:
-            print("[MongoDB] Region was not specified in given request")
         return [
             x
             for x in self.retrieve_data(
@@ -168,18 +138,18 @@ class MongoDB(Database):
             )
         ]
 
-    def print_all_data(self, collection: str):
-        for post in self.db[collection].find():
-            pprint.pprint(post)
-        print("\n")
+    # def print_all_data(self, collection: str):
+    #     for post in self.db[collection].find():
+    #         pprint.pprint(post)
+    #     print("\n")
 
-    def clean_collection(self, collection: str):
-        self.db[collection].delete_many({})
+    # def clean_collection(self, collection: str):
+    #     self.db[collection].delete_many({})
 
-    def reset(self):
-        self.clean_all_collection()
+    # def reset(self):
+    #     self.clean_all_collection()
 
-    def clean_all_collection(self):
-        if self.collection_list is not None:
-            for collection in self.collection_list:
-                self.clean_collection(collection)
+    # def clean_all_collection(self):
+    #     if self.collection_list is not None:
+    #         for collection in self.collection_list:
+    #             self.clean_collection(collection)

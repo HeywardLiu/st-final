@@ -1,4 +1,45 @@
 {
+  "test_init":[
+    {
+      "case":"TTTTT",
+      "ip":"172.26.96.170",
+      "port":27017,
+      "db_name":"my-mongodb",
+      "collection_list":["earthquake,reservoir,electricity,factory"]
+    },
+    {
+      "case":"FTTTT",
+      "ip":192.26,
+      "port":27017,
+      "db_name":"my-mongodb",
+      "collection_list":["earthquake,reservoir,electricity,factory"],
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case":"TTFTT",
+      "ip":"172.26.96.170",
+      "port":"27017",
+      "db_name":"my-mongodb",
+      "collection_list":["earthquake,reservoir,electricity,factory"],
+      "outcome":"Exception:TypeMisMatch"
+    },
+    {
+      "case":"TTTFT",
+      "ip":"172.26.96.170",
+      "port":27017,
+      "db_name":["my-mongodb"],
+      "collection_list":["earthquake,reservoir,electricity,factory"],
+      "outcome":"Exception:TypeMisMatch"
+    },
+    {
+      "case":"TTTTF",
+      "ip":"172.26.96.170",
+      "port":27017,
+      "db_name":"my-mongodb",
+      "collection_list":"earthquake,reservoir,electricity,factory",
+      "outcome":"Exception:TypeMisMatch"
+    }
+  ],
   "test_retrieve_earthquake_data_by_factory": [
     {
       "case": "TTTT",
@@ -27,6 +68,84 @@
           "magnitude": 0.00032644588703523386
         }
       ]
+    },
+    {
+      "case": "TTTT",
+      "factory": "竹",
+      "quantity": 1,
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "magnitude": [
+          { "factory": "竹", "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": [
+        {
+          "time": "2023-5-12 03:40:52",
+          "M_L": 3.6,
+          "factory": "竹",
+          "magnitude": 0.00032644588703523386
+        }
+      ]
+    },
+    {
+      "case": "TTTT",
+      "factory": "竹",
+      "quantity": 1,
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "magnitude": [
+          { "factory": "竹", "magnitude": 0.00032644588703523386 }
+        ]
+      },
+      "outcome": [
+        {
+          "time": "2023-5-12 03:40:52",
+          "M_L": 3.6,
+          "factory": "竹",
+          "magnitude": 0.00032644588703523386
+        }
+      ]
+    },
+    {
+      "case": "FTTT",
+      "factory": [{"factory":"中"}],
+      "quantity": 1,
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "focal_dep": 3.2,
+        "longitude": 41.0,
+        "latitude": 20.7,
+        "magnitude": [
+          { "factory": "竹", "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "FTTT",
+      "factory": {"factory":["中", "南"]},
+      "quantity": 1,
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "focal_dep": 3.2,
+        "longitude": 41.0,
+        "latitude": 20.7,
+        "magnitude": [
+          { "factory": "竹", "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:TypeMisMatch"
     },
     {
       "case": "FTTT",
@@ -82,9 +201,152 @@
       "outcome": "Exception:TypeMisMatch"
     },
     {
+      "case": "TFTT",
+      "factory": "中",
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "focal_dep": 3.2,
+        "longitude": 41.0,
+        "latitude": 20.7,
+        "magnitude": [
+          { "factory": "竹", "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TFTT",
+      "factory": "中",
+      "quantity": [1],
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "focal_dep": 3.2,
+        "longitude": 41.0,
+        "latitude": 20.7,
+        "magnitude": [
+          { "factory": "竹", "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TFTT",
+      "factory": "中",
+      "quantity": "None",
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "focal_dep": 3.2,
+        "longitude": 41.0,
+        "latitude": 20.7,
+        "magnitude": [
+          { "factory": "竹", "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
       "case": "TTFT",
       "factory": "中",
       "quantity": 1,
+      "outcome": []
+    },
+    {
+      "case": "TTFT",
+      "factory": "中部廠區",
+      "quantity": 32,
+      "outcome": []
+    },
+    {
+      "case": "TTFT",
+      "factory": "中部廠區",
+      "quantity": 15,
+      "outcome": []
+    },
+    {
+      "case": "TTFT",
+      "factory": "中部廠區",
+      "quantity": -1,
+      "outcome": []
+    },
+    {
+      "case": "TTTF",
+      "factory": "南部廠區",
+      "quantity": 1,
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "focal_dep": 3.2,
+        "longitude": 41.0,
+        "latitude": 20.7,
+        "magnitude": [
+          { "factory": "竹", "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": []
+    },
+    {
+      "case": "TTTF",
+      "factory": "竹",
+      "quantity": 1,
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "focal_dep": 3.2,
+        "longitude": 41.0,
+        "latitude": 20.7,
+        "magnitude": [
+          { "factory": "新竹廠區", "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": []
+    },
+    {
+      "case": "TTTF",
+      "factory": "竹",
+      "quantity": -1,
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "focal_dep": 3.2,
+        "longitude": 41.0,
+        "latitude": 20.7,
+        "magnitude": [
+          { "factory": "新竹廠區", "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": []
+    },
+    {
+      "case": "TTTF",
+      "factory": "",
+      "quantity": 1,
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "focal_dep": 3.2,
+        "longitude": 41.0,
+        "latitude": 20.7,
+        "magnitude": [
+          { "factory": "竹", "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
       "outcome": []
     },
     {
@@ -132,6 +394,27 @@
       ]
     },
     {
+      "case": "TT",
+      "quantity": 1,
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "focal_dep": 3.2,
+        "latitude": 20.7,
+        "magnitude": [
+          { "factory": "竹", "magnitude": 0.00032644588703523386 }
+        ]
+      },
+      "outcome": [
+        {
+          "time": "2023-5-12 03:40:52",
+          "M_L": 3.6,
+          "focal_dep": 3.2,
+          "latitude": 20.7
+        }
+      ]
+    },
+    {
       "case": "FT",
       "factory": 60,
       "quantity": "1",
@@ -150,8 +433,36 @@
       "outcome": "Exception:TypeMisMatch"
     },
     {
+      "case": "FT",
+      "factory": 60,
+      "quantity": ["1"],
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "M_L": 3.6,
+        "focal_dep": 3.2,
+        "longitude": 41.0,
+        "latitude": 20.7,
+        "magnitude": [
+          { "factory": "竹", "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
       "case": "TF",
       "quantity": 1,
+      "outcome": []
+    },
+    {
+      "case": "TF",
+      "quantity": -255,
+      "outcome": []
+    },
+    {
+      "case": "TF",
+      "quantity": 100,
       "outcome": []
     }
   ],
@@ -176,6 +487,46 @@
       ]
     },
     {
+      "case": "TTTT",
+      "name": "德基水庫",
+      "quantity": 1,
+      "Somedata":"data",
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "percentage": 427.6,
+        "water_supply": 321.2,
+        "name": "德基水庫"
+      },
+      "outcome": [
+        {
+          "time": "2023-5-12 03:40:52",
+          "percentage": 427.6,
+          "water_supply": 321.2,
+          "name": "德基水庫"
+        }
+      ]
+    },
+    {
+      "case": "TTTT",
+      "name": "SOME RESERVOIR",
+      "quantity": 1,
+      "Somedata":"data",
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "percentage": 427.6,
+        "water_supply": 321.2,
+        "name": "SOME RESERVOIR"
+      },
+      "outcome": [
+        {
+          "time": "2023-5-12 03:40:52",
+          "percentage": 427.6,
+          "water_supply": 321.2,
+          "name": "SOME RESERVOIR"
+        }
+      ]
+    },
+    {
       "case": "FTTT",
       "name": 60,
       "quantity": 1,
@@ -184,6 +535,18 @@
         "percentage": 427.6,
         "water_supply": 321.2,
         "name": "德基水庫"
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "FTTT",
+      "name": 60,
+      "quantity": 1,
+      "mock_insert_data": {
+        "time": "2023-5-12 03:40:52",
+        "percentage": 427.6,
+        "water_supply": 321.2,
+        "name": 60
       },
       "outcome": "Exception:TypeMisMatch"
     },
@@ -202,6 +565,18 @@
     {
       "case": "TTFT",
       "name": "德基水庫",
+      "quantity": 1,
+      "outcome": []
+    },
+    {
+      "case": "TTFT",
+      "name": "水庫",
+      "quantity": 1,
+      "outcome": []
+    },
+    {
+      "case": "TTFT",
+      "name": "沉浸水庫",
       "quantity": 1,
       "outcome": []
     },

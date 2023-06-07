@@ -22,11 +22,9 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with unittest
         run: |
-          cd Lab01
           python3 -m unittest unittest_Database.py > /dev/null
 
       - name: Test Coverage
         run: |
-          cd Lab01
           coverage run -m unittest unittest_Database.py
           coverage report

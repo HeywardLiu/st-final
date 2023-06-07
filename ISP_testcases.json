@@ -687,10 +687,378 @@
       "outcome": "Exception:TypeMisMatch"
     },
     {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "factory": 123, "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
       "case": "TFT",
       "data": {
         "time": "2023-05-12 03:40:52",
+        "magnitude": [
+          { "factory": "竹", "magnitude": [0.00032644588703523386] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "factory": 123, "magnitude": [0.00032644588703523386] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "factory": 123 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TFT",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          {  },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "factory": "竹" },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TFT",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "magnitude": [
+          { "factory": "竹" },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TFT",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "factory": "竹" },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TFT",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "magnitude": [
+          { "factory": 123 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TFT",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "factory": 123 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TFT",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "magnitude": [
+          { "factory": [123] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TFT",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "factory": [123] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": "0.00032644588703523386" },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": 2023,
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": 2023,
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": "0.00032644588703523386" },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": 2023,
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
         "factory": 123,
+        "magnitude": [
+          { "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
+        "factory": 123,
+        "magnitude": 
+          { "magnitude": 0.00032644588703523386 }
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
+        "factory": 123,
+        "magnitude": 
+          { "factory": "中" }
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
+        "factory": 123,
+        "magnitude":
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
+        "factory": 123,
+        "magnitude": 
+          { "magnitude": "0.00032644588703523386" }
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
+        "factory": 123,
+        "magnitude": 
+          { "factory": 123 }
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
+        "factory": 123,
+        "magnitude":
+          { "factory": 123, "magnitude": 0.0003714193582435097 }
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": "0.00032644588703523386" },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": ["2023, 5, 12"],
+        "factory": 123,
+        "magnitude": [
+          { "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": ["2023, 5, 12"],
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": "0.00032644588703523386" },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": ["2023, 5, 12"],
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": 0.00032644588703523386 },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": 2023,
+        "factory": "中",
         "magnitude": [
           { "magnitude": 0.00032644588703523386 },
           { "factory": "中", "magnitude": 0.00019905740360289052 },
@@ -711,6 +1079,136 @@
         ]
       },
       "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": "0.00032644588703523386" },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
+        "factory": 123,
+        "magnitude": [
+          { "magnitude": [0.00032644588703523386] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": ["0.00032644588703523386"] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023, 5, 12],
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": [0.00032644588703523386] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": ["2023, 5, 12"],
+        "factory": 123,
+        "magnitude": [
+          { "magnitude": [0.00032644588703523386] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": ["2023, 5, 12"],
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": ["0.00032644588703523386"] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": ["2023, 5, 12"],
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": [0.00032644588703523386] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": 2023,
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": [0.00032644588703523386] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "factory": "竹", "magnitude": ["0.00032644588703523386"] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "factory": "中",
+        "magnitude": [
+          { "magnitude": ["0.00032644588703523386"] },
+          { "factory": "中", "magnitude": 0.00019905740360289052 },
+          { "factory": "南", "magnitude": 0.0003714193582435097 }
+        ]
+      },
+      "outcome": "Exception:KeyError"
     },
     {
       "case": "FFF",
@@ -753,11 +1251,101 @@
       "outcome": "Exception:TypeMisMatch"
     },
     {
+      "case": "TFT",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "region": "",
+        "power_usage": 0.1,
+        "power_generate": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TFT",
+      "data": {
+        "time": "",
+        "region": "",
+        "power_usage": 0.1,
+        "power_generate": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
       "case": "TTF",
       "data": {
         "time": "2023-05-12 03:40:52",
         "region": "中",
         "power_usage": "0.1",
+        "power_generate": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "region": "中",
+        "power_usage": 0.1,
+        "power_generate": "0.2"
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": 2023,
+        "region": "中",
+        "power_usage": 0.1,
+        "power_generate": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023],
+        "region": "中",
+        "power_usage": 0.1,
+        "power_generate": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": ["2023"],
+        "region": "中",
+        "power_usage": 0.1,
+        "power_generate": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "region": 123,
+        "power_usage": 0.1,
+        "power_generate": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "region": [123],
+        "power_usage": 0.1,
+        "power_generate": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "region": ["中"],
+        "power_usage": 0.1,
         "power_generate": 0.2
       },
       "outcome": "Exception:TypeMisMatch"
@@ -800,6 +1388,136 @@
       "outcome": "Exception:TypeMisMatch"
     },
     {
+      "case": "TFT",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "name": "",
+        "percentage": 0.1,
+        "water_supply": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": 2023,
+        "name": "德基水庫",
+        "percentage": 0.1,
+        "water_supply": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": [2023],
+        "name": "德基水庫",
+        "percentage": 0.1,
+        "water_supply": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": ["2023-05-12 03:40:52"],
+        "name": "德基水庫",
+        "percentage": 0.1,
+        "water_supply": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "name": 123,
+        "percentage": 0.1,
+        "water_supply": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "name": ["德基水庫"],
+        "percentage": 0.1,
+        "water_supply": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "name": [123],
+        "percentage": 0.1,
+        "water_supply": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "name": "德基水庫",
+        "percentage": "0.1",
+        "water_supply": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "name": "德基水庫",
+        "percentage": 0.1,
+        "water_supply": "0.2"
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "name": "德基水庫",
+        "percentage": ["0.1"],
+        "water_supply": [0.2]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "name": "德基水庫",
+        "percentage": [0.1],
+        "water_supply": ["0.2"]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "name": "德基水庫",
+        "percentage": [0.1],
+        "water_supply": 0.2
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
+      "case": "TTF",
+      "data": {
+        "time": "2023-05-12 03:40:52",
+        "name": "德基水庫",
+        "percentage": 0.1,
+        "water_supply": [0.2]
+      },
+      "outcome": "Exception:TypeMisMatch"
+    },
+    {
       "case": "TTF",
       "data": {
         "time": "2023-05-12 03:40:52",
@@ -813,7 +1531,7 @@
       "case": "FFF",
       "data": {
         "time": "2023-05-12 03:40:52",
-        "name": "德基水庫",
+        "name": "",
         "percentage": "0.1",
         "water_supply": "0.2"
       },

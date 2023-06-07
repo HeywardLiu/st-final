@@ -13,9 +13,21 @@ class TestMongoDB(unittest.TestCase):
     def setup(self):
         self.db = MongoDB()
         self.db.reset = MagicMock(side_effect=self.mock_reset())
-        with open("testcases.json", "r") as f:
-
+        with open("ISP_testcases.json", "r") as f:
             self.testcases = json.load(f)
+
+    def test_init(self):
+        with open("ISP_testcases.json", "r") as f:
+            self.testcases = json.load(f)
+        self.testcases=self.testcases["test_init"]
+        for case in self.testcases:
+            with self.subTest(case["case"]):
+                if case.get("outcome")!=None and "Exception" in case.get("outcome"):
+                    e = case["outcome"].split(":")[1]
+                    with self.assertRaises(eval(e)):
+                        self.db = MongoDB(ip=case["ip"], port=case['port'], db_name=case['db_name'], collection_list=case['collection_list'])
+                else:
+                    self.db = MongoDB(ip=case["ip"], port=case['port'], db_name=case['db_name'], collection_list=case['collection_list'])
 
     def test_retrieve_earthquake_data_by_factory(self):
         self.setup()
@@ -147,6 +159,7 @@ class TestMongoDB(unittest.TestCase):
         for collection in ["earthquake", "reservoir", "electricity", "factory"]:
             self.db.db[collection].delete_many({})
 
+    
     def test_insert_earthquake_data(self):
         self.setup()
         self.testcases = self.testcases["insert_earthquake_data"]

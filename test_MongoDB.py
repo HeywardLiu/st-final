@@ -13,7 +13,7 @@ class TestMongoDB(unittest.TestCase):
     def setup(self):
         self.db = MongoDB()
         self.db.reset = MagicMock(side_effect=self.mock_reset())
-        with open("_testcases.json", "r") as f:
+        with open("testcases.json", "r") as f:
             self.testcases = json.load(f)
 
     def test_retrieve_earthquake_data_by_factory(self):
@@ -31,7 +31,7 @@ class TestMongoDB(unittest.TestCase):
                     e = case["outcome"].split(":")[1]
                     with self.assertRaises(eval(e)):
                         self.db.retrieve_earthquake_data_by_factory(
-                            factory=case["factory"], quantity=case["quantity"]
+                            factory=case.get("factory"), quantity=case.get("quantity")
                         )
                 else:
                     result = [
@@ -211,3 +211,7 @@ class TestMongoDB(unittest.TestCase):
                     result[0]["time"] = result[0]["time"].strftime("%Y-%m-%d %H:%M:%S")
 
                     self.assertEqual(result[0], case["outcome"])
+
+
+if __name__ == "__main__":
+    unittest.main()

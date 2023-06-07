@@ -5,10 +5,11 @@ from strongtyping.strong_typing_utils import TypeMisMatch
 
 
 class TestDatabase(unittest.TestCase):
-    def setUp(self):
-        Database.__init__ = MagicMock(return_value=None)
-        self.app = Database()
-        self.app.db = MagicMock()
+    @patch("pymongo.MongoClient")
+    def setUp(self, mock_MongoClient):
+        self.app = Database(ip="123", port=123, db_name="test")
+        self.app.client = mock_MongoClient
+        self.app.db = self.app.client["mock"]
 
     def tearDown(self):
         pass
@@ -20,7 +21,7 @@ class TestDatabase(unittest.TestCase):
         with self.assertRaises(TypeMisMatch):  # Test data is not dict
             self.app.insert_data(collection_name="test", data="test")
 
-    def test_retrieve_data_input_typechekcing(self):
+    def test_retrieve_data_input_typechecking(self):
         with self.assertRaises(TypeMisMatch):  # Test collection_name is not str
             self.app.retrieve_data(collection_name=1)
 
@@ -33,8 +34,13 @@ class TestDatabase(unittest.TestCase):
         with self.assertRaises(TypeMisMatch):  # Test sort is not tuple
             self.app.retrieve_data(collection_name="test", sort="test")
 
-    def test_retrieve_data_(self):
-        pass
+    @patch("pymongo.collection.Collection.insert_one")
+    def test_insert_data_(self, mock_insert_one):
+        self.app.insert_data(collection_name="test", data={})
+
+    @patch("pymongo.collection.Collection.find")
+    def test_retrieve_data_(self, mock_find):
+        self.app.retrieve_data(collection_name="test", condition={}, value={})
 
 
 if __name__ == "__main__":  # pragma: no cover
